@@ -4,6 +4,7 @@ import Button from 'components/Button/Button';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import SearchBar from '../SearchBar/SearchBar';
 import Loader from 'components/Loader/Loader';
+import PropTypes from 'prop-types';
 import css from './App.module.css';
 
 export function App() {
@@ -19,7 +20,7 @@ export function App() {
   const BASE_URL = 'https://pixabay.com/api/';
   const API_KEY = '34438281-0af2d234ee7e315fc0f0d81e0';
 
-  async function getPictures(value, page = 1) {
+  async function getPictures(value, page) {
     try {
       return await axios.get(
         `${BASE_URL}?key=${API_KEY}&q=${value}&page=${page}&image_type=photo&orientation=horizontal&per_page=12`
@@ -59,8 +60,8 @@ export function App() {
     setPage(prev => prev + 1);
   };
 
-  const onChangeSearch = value => {
-    setSearch(value);
+  const onChangeSearch = query => {
+    setSearch(query);
     setPage(1);
     setError(false)
   };

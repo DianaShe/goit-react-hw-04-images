@@ -4,8 +4,9 @@ import PropTypes from 'prop-types';
 export default function SearchBar({onSubmit}) {
   const handleSubmit = e => {
     e.preventDefault();
-    if (e.target.elements.name.value.trim() !== '') {
-      onSubmit(e.target.elements.name.value.trim());
+    const query = e.target.elements.name.value.trim()
+    if (query !== '') {
+      onSubmit(query);
     }
     e.target.reset();
   };
