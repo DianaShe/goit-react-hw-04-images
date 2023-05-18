@@ -4,7 +4,6 @@ import Button from 'components/Button/Button';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import SearchBar from '../SearchBar/SearchBar';
 import Loader from 'components/Loader/Loader';
-import PropTypes from 'prop-types';
 import css from './App.module.css';
 
 export function App() {
