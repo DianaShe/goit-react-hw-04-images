@@ -1,7 +1,7 @@
 import css from './SearchBar.module.css';
 import PropTypes from 'prop-types';
 
-export default function SearchBar(onSubmit) {
+export default function SearchBar({onSubmit}) {
   const handleSubmit = e => {
     e.preventDefault();
     if (e.target.elements.name.value.trim() !== '') {
